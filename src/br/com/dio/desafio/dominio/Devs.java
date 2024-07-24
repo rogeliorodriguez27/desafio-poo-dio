@@ -1,9 +1,6 @@
 package br.com.dio.desafio.dominio;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Devs {
     private String nome;
@@ -14,10 +11,23 @@ public class Devs {
         this.nome = nome;
     }
 
-    public void inscriverNoBootcamp(){};
-    public void progredir(){};
-    public void calcularTotalXp(){};
-    public void exibirCursos(){};
+    public void inscriverNoBootcamp(Bootcamp bootcamp){
+        bootcamp.getDevsInscritos().add(this);
+        getConteudosInscritos().addAll(bootcamp.getConteudo());
+    };
+    public void progredir(){
+        Optional<Conteudos> conteudo = conteudosInscritos.stream().findFirst();
+        if (conteudo.isPresent()){
+            conteudosCompletados.add(conteudo.get());
+            conteudosInscritos.remove(conteudo.get());
+        }
+    };
+    public double calcularTotalXp(){
+        return conteudosCompletados.stream().mapToDouble(Conteudos::CalcularXp).sum();
+    };
+    public void exibirCursos(){
+        System.out.println(conteudosInscritos.toString());
+    };
 
     public String getNome() {
         return nome;
