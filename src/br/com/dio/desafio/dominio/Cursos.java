@@ -3,7 +3,8 @@ package br.com.dio.desafio.dominio;
 public class Cursos extends Conteudos{
     private int cargaHoraria;
 
-    public Cursos(int cargaHoraria) {
+    public Cursos(String titulo, String descricao, int cargaHoraria) {
+        super(titulo, descricao);
         this.cargaHoraria = cargaHoraria;
     }
 

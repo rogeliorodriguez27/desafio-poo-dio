@@ -2,9 +2,14 @@ package br.com.dio.desafio.dominio;
 
 public abstract class  Conteudos {
 
-    public final double  XP_PADRAO = 20d;
+    protected static final double  XP_PADRAO = 20d;
     private String titulo;
     private String descricao;
+
+    public Conteudos(String titulo, String descricao) {
+        this.titulo = titulo;
+        this.descricao = descricao;
+    }
 
     public abstract double CalcularXp();
 

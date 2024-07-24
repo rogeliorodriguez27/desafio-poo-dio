@@ -6,7 +6,8 @@ public class Mentorias extends Conteudos {
 
     private LocalDateTime cdataMentoria;
 
-    public Mentorias(LocalDateTime cdataMentoria) {
+    public Mentorias(String titulo, String descricao, LocalDateTime cdataMentoria) {
+        super(titulo, descricao);
         this.cdataMentoria = cdataMentoria;
     }
 
