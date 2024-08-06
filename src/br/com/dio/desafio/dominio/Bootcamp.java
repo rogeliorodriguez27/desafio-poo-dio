@@ -42,8 +42,13 @@ public class Bootcamp {
         return devsInscritos;
     }
 
-    public void setDevsInscritos(Set<Devs> devsInscritos) {
-        this.devsInscritos = devsInscritos;
+    public void inscrivirDevs(Devs dev) {
+        this.devsInscritos.add(dev);
+
+    }
+
+    public int getNumeroDevsInscritos() {
+        return this.devsInscritos.size();
     }
 
     public Set<Conteudos> getConteudo() {
